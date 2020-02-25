@@ -38,6 +38,9 @@ public class SaveImageToFileWorker extends Worker {
         Context applicationContext = getApplicationContext();
 
         ContentResolver resolver = applicationContext.getContentResolver();
+
+        WorkerUtils.makeStatusNotification("Doing <WORK_NAME>", applicationContext);
+        WorkerUtils.sleep();
         try {
             String resourceUri = getInputData()
                     .getString(Constants.KEY_IMAGE_URI);

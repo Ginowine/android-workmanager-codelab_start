@@ -31,6 +31,9 @@ public class BlurWorker extends Worker {
         Context applicationContext = getApplicationContext();
         String resourceUri = getInputData().getString(Constants.KEY_IMAGE_URI);
 
+        WorkerUtils.makeStatusNotification("Doing <WORK_NAME>", applicationContext);
+        WorkerUtils.sleep();
+
         try {
 
 //            Bitmap picture = BitmapFactory.decodeResource(
